@@ -65,22 +65,51 @@
         } else if (productPrice === "") {
           alert("write down the price, must be a number!");
         } else {
+          const priceValue = parseFloat(productPrice);
+          let quantity = 1;
+
           const newProduct = document.createElement("div");
           const newPName = document.createElement("h3");
           newPName.textContent = productName;
           const newPPrice = document.createElement("p");
           newPPrice.textContent = `$${productPrice}`;
+          const minusBtn = document.createElement("button");
+          minusBtn.textContent = "➖";
+          const currentQuantity = document.createElement("span");
+          currentQuantity.textContent = `${quantity}`;
+
+          const plusBtn = document.createElement("button");
+          plusBtn.textContent = "➕";
+
+          minusBtn.addEventListener("click", (event) => {
+            if (quantity > 1) {
+              quantity--;
+              currentQuantity.textContent = quantity;
+              runningTotal -= priceValue;
+              totalSpan.textContent = `$${runningTotal.toFixed(2)}`;
+            }
+          });
+
+          plusBtn.addEventListener("click", (event) => {
+            quantity++;
+            currentQuantity.textContent = quantity;
+
+            runningTotal += priceValue;
+            totalSpan.textContent = `$${runningTotal.toFixed(2)}`;
+          });
 
           newProduct.appendChild(newPName);
           newProduct.appendChild(newPPrice);
+          newProduct.appendChild(minusBtn);
+          newProduct.appendChild(currentQuantity);
+          newProduct.appendChild(plusBtn);
           cartTable.appendChild(newProduct);
 
-          calculateTotal();
+          calculateTotal(priceValue);
         }
       });
 
-      function calculateTotal() {
-        const priceValue = parseFloat(inputPrice.value);
+      function calculateTotal(priceValue) {
         if (priceValue > 0) {
           runningTotal += priceValue;
 
