@@ -81,6 +81,9 @@
           const plusBtn = document.createElement("button");
           plusBtn.textContent = "➕";
 
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Delete";
+
           minusBtn.addEventListener("click", (event) => {
             if (quantity > 1) {
               quantity--;
@@ -98,11 +101,18 @@
             totalSpan.textContent = `$${runningTotal.toFixed(2)}`;
           });
 
+          deleteBtn.addEventListener("click", () => {
+            runningTotal -= priceValue * quantity;
+            totalSpan.textContent = `$${runningTotal.toFixed(2)}`;
+            newProduct.remove();
+          });
+
           newProduct.appendChild(newPName);
           newProduct.appendChild(newPPrice);
           newProduct.appendChild(minusBtn);
           newProduct.appendChild(currentQuantity);
           newProduct.appendChild(plusBtn);
+          newProduct.appendChild(deleteBtn);
           cartTable.appendChild(newProduct);
 
           calculateTotal(priceValue);
