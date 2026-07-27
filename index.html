@@ -4,6 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
+    <style>
+      .productsContainer {
+        background-color: rgb(14, 167, 52);
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="productsContainer"></div>
+    <div class="cartDisplay"></div>
+
+    <script>
+      const productsContainer = document.querySelector(".productsContainer");
+      const cartDisplay = document.querySelector(".cartDisplay");
+
+      let cart = [];
+
+      let products = [
+        { id: 1, name: "Apple", price: 4.99 },
+
+        { id: 2, name: "Mango", price: 3.89 },
+
+        { id: 1, name: "Apple", price: 4.99 },
+
+        { id: 2, name: "Mango", price: 3.89 },
+
+        { id: 1, name: "Apple", price: 4.99 },
+
+        { id: 2, name: "Mango", price: 3.89 },
+
+        { id: 1, name: "Apple", price: 4.99 },
+
+        { id: 2, name: "Mango", price: 3.89 },
+
+        { id: 1, name: "Apple", price: 4.99 },
+
+        { id: 2, name: "Mango", price: 3.89 },
+
+        { id: 1, name: "Apple", price: 4.99 },
+
+        { id: 2, name: "Mango", price: 3.89 },
+      ];
+
+      function displayProducts() {
+        productsContainer.innerHTML = "";
+        products.forEach((product) => {
+          const pDiv = document.createElement("div");
+          pDiv.className = "pDiv";
+          const pName = document.createElement("h3");
+          pName.textContent = `${product.name}`;
+          const pPrice = document.createElement("p");
+          pPrice.textContent = `${product.price}`;
+          const addBtn = document.createElement("button");
+          addBtn.textContent = "Add";
+
+          addBtn.addEventListener("click", () => {});
+
+          pDiv.appendChild(pName);
+          pDiv.appendChild(pPrice);
+          pDiv.appendChild(addBtn);
+
+          productsContainer.appendChild(pDiv);
+        });
+      }
+
+      displayProducts();
+    </script>
+  </body>
 </html>
