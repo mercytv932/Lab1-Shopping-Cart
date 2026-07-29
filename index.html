@@ -129,20 +129,71 @@
         direction: column;
         gap: 12px;
       }
-
+      /* newProduct/li styles */
       .newProduct {
-        border: 2px solid black;
-
+        padding: 16px 18px;
         display: flex;
         align-items: center;
-        gap: 15px;
-        background-color: rgb(18, 165, 84);
+        gap: 14px;
+        background-color: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        box-shadow:
+          0 5px 16px rgba() 15,
+          23,
+          42,
+          0.07;
+
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .newProduct:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.11);
       }
 
       .newProduct h3 {
-        font-size: 12px;
+        flex: 1;
+        margin: 0;
+        font-size: 17px;
+        text-transform: capitalize;
       }
 
+      .newProduct p {
+        margin: 0;
+        min-width: 80px;
+        font-weight: 700;
+        color: #2563eb;
+      }
+
+      .newProduct span {
+        min-width: 24px;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .newProduct button {
+        padding: 7px 10px;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .newProduct button:hover {
+        transform: scale(1.05);
+      }
+
+      /* Minus and plus buttons */
+      .newProduct button:nth-of-type(1),
+      .newProduct button:nth-of-type(2) {
+        background-color: #e2e8f0;
+        color: #1e293b;
+      }
+
+      
       .card-footer-div {
         border: 3px solid cyan;
         padding: 15px;
