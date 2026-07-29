@@ -32,17 +32,20 @@ addButton.addEventListener("click", () => {
     let quantity = 1;
 
     const newProduct = document.createElement("div");
+    newProduct.className = "newProduct";
     const newPName = document.createElement("h3");
     newPName.textContent = productName;
     const newPPrice = document.createElement("p");
     newPPrice.textContent = `$${productPrice}`;
     const minusBtn = document.createElement("button");
-    minusBtn.textContent = "➖";
+    minusBtn.textContent = "-";
+    minusBtn.className = "minusBtn";
     const currentQuantity = document.createElement("span");
     currentQuantity.textContent = `${quantity}`;
 
     const plusBtn = document.createElement("button");
-    plusBtn.textContent = "➕";
+    plusBtn.textContent = "+";
+    plusBtn.className = "plusBtn";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
