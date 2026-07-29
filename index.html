@@ -36,6 +36,7 @@
         padding: 28px;
       }
 
+      /* content Header styles */
       .content-header {
         padding-bottom: 18px;
         border-bottom: 1px solid #e5e7eb;
@@ -47,6 +48,7 @@
         letter-spacing: -1px;
       }
 
+      /* Form styles */
       .form-section {
         padding: 22px;
         display: flex;
@@ -72,8 +74,20 @@
 
       #inputName,
       #inputPrice {
-        border-radius: 10px;
-        padding: 12px;
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 15px;
+        background-color: white;
+        border: 1px solid #cbd5e1;
+        border-radius: 9px;
+        outline: none;
+        transition: 0.2s ease;
+      }
+
+      #inputName:focus,
+      #inputPrice:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
       }
 
       .button-group {
@@ -84,42 +98,40 @@
       }
 
       .button-group button {
-        background-color: rgb(0, 151, 0);
-        padding: 7px 14px;
+        min-height: 43px;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 700;
         color: white;
-        border-radius: 4px;
+        background-color: #2563eb;
+        border: none;
+        border-radius: 9px;
         cursor: pointer;
-        transition: 0.3s ease;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s ease;
       }
 
       .button-group button:hover {
-        background-color: rgb(1, 125, 1);
-        transform: translateY(-1px);
+        background-color: #1d4ed8;
+        transform: translateY(-2px);
       }
-
+      /* cart styles */
       .cart-section {
-        border: 3px solid purple;
-        padding-block-end: 20px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        border-radius: 7px;
+        gap: 18px;
       }
 
       .cart-table {
-        min-height: 200px;
-        border: 3px solid orange;
-        padding: 15px;
+        min-height: 180px;
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border-radius: 7px;
-        margin: 5px;
+        direction: column;
+        gap: 12px;
       }
 
       .newProduct {
         border: 2px solid black;
-        /* padding: 7px; */
 
         display: flex;
         align-items: center;
