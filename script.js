@@ -83,6 +83,21 @@ addButton.addEventListener("click", () => {
 
     calculateTotal(priceValue);
   }
+
+  inputName.value = "";
+  inputPrice.value = "";
+});
+
+inputName.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    addButton.click();
+  }
+});
+
+inputPrice.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    addButton.click();
+  }
 });
 
 function calculateTotal(priceValue) {
